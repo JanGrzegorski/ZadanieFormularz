@@ -1,0 +1,35 @@
+ input {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        .valid {
+            border: 2px solid green;
+        }
+        .invalid {
+            border: 2px solid red;
+        }
+        #podsumowanie {
+            display: none;
+            margin-top: 20px;
+        }
+        .formu{
+            background-color: azure;
+            width: 30%;
+            margin: 0 auto;
+        }
+        #formularz{
+            border-radius: 1.5vh;
+            box-shadow: 2px 2px 2px black;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .data{
+            width:94.5%;
+        }
