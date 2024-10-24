@@ -19,7 +19,7 @@
             <input type="password" id="potw" name="potw" placeholder="Potwierdzenie hasła" required>
             <input type="submit" value="Rejestruj">
         </form>
-        <div id="podsumowanie"></div>
+        <div id="wynik"></div>
     </div>
 
     <script>
@@ -29,62 +29,62 @@
 
             if (id === "imie" || id === "nazwisko") {
                 if (input.value.trim() === "") {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
             if (id === "urodzenia") {
                 if (!/^\d{4}-\d{2}-\d{2}$/.test(input.value)) {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
             if (id === "email") {
                 if (input.value === "" || !input.value.includes('@') || !input.value.includes('.')) {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
             if (id === "telefon") {
                 if (!/^\d{9}$/.test(input.value)) {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
             if (id === "haslo") {
                 if (input.value.length < 8 || !/\d/.test(input.value)) {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
             if (id === "potw") {
                 const haslo = document.getElementById("haslo").value;
                 if (input.value !== haslo) {
-                    input.classList.add("invalid");
+                    input.classList.add("niedziala");
                     isValid = false;
                 } else {
-                    input.classList.remove("invalid");
-                    input.classList.add("valid");
+                    input.classList.remove("niedziala");
+                    input.classList.add("dziala");
                 }
             }
 
@@ -113,16 +113,16 @@
 
             if (isValid) {
                 form.style.display = 'none';
-                const podsumowanie = document.getElementById("podsumowanie");
-                podsumowanie.innerHTML = `
-                    <h2>Podsumowanie</h2>
+                const wynik = document.getElementById("wynik");
+                wynik.innerHTML = `
+                    <h2>wynik</h2>
                     <p><strong>Imię:</strong> ${document.getElementById("imie").value}</p>
                     <p><strong>Nazwisko:</strong> ${document.getElementById("nazwisko").value}</p>
                     <p><strong>Data urodzenia:</strong> ${document.getElementById("urodzenia").value}</p>
                     <p><strong>Adres e-mail:</strong> ${document.getElementById("email").value}</p>
                     <p><strong>Numer telefonu:</strong> ${document.getElementById("telefon").value}</p>
                 `;
-                podsumowanie.style.display = 'block';
+                wunik.style.display = 'block';
             }
         });
     </script>
