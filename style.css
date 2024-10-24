@@ -1,4 +1,7 @@
- input {
+body{
+ background-color: steelgray;
+}
+input {
             display: block;
             margin: 10px 0;
             padding: 8px;
